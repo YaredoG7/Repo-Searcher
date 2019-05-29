@@ -1,0 +1,16 @@
+<div class="main-container">
+  <div class="header" (click)="hide()">
+     <app-header-panel> </app-header-panel>
+  </div>
+  <div class="side-bar" [ngClass]="{collapse : !showBar}">
+     <app-side-bar> </app-side-bar>
+  </div>
+  <div class="outlet">
+     <router-outlet></router-outlet>
+  </div>
+</div>
+
+
+
+
+

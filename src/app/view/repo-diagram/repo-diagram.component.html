@@ -1,0 +1,16 @@
+<div class="diagram-container">
+  <div class="search-repo p-15">
+    <div class="search-item large">
+     Repo details in diagram
+    </div>
+  </div>
+  <div class="diagram">
+  <small>If repo name is checked figure will be displayed on this page, the diagram is zoomable </small>
+    <ng-container>
+      <svg #svg >
+        <g #diagram [appZoomable]="svg"></g>
+      </svg>
+    </ng-container>
+    
+  </div>
+</div>

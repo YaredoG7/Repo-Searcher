@@ -1,0 +1,164 @@
+// Colors
+$primary-color: #17a2b8;
+$dark-color: #343a40;
+$light-color: #f4f4f4;
+$danger-color: #dc3545;
+$success-color: #4fc06a;
+
+
+// set text color 
+@function set-text-color($color){
+    @if(lightness($color) > 60){
+        @return rgb(114, 36, 12);
+    } @else {
+        @return #fff;
+    }
+}
+
+a {
+    text-decoration: none;
+}
+
+ul {
+    list-style: none;
+}
+
+// set background 
+@mixin set-background ($color) {
+    background-color: $color;
+    color: set-text-color($color)
+}
+
+// margin and padding
+
+$spaceamount: (5, 10, 15, 20, 25);
+
+@each $space in $spaceamount {
+    
+    // all around margin 
+    .m-#{$space}{
+        margin: #{$space}px;
+    }
+
+    // vertical margin 
+    .my-#{$space}{
+        margin: #{$space}px 0;
+    }
+
+    // all round padding
+    .p-#{$space} {
+        padding: #{$space}px;
+    }
+
+    // vertical padding 
+    .py-#{$space}{
+        padding: #{$space}px 0;
+    }
+
+
+}
+
+// text styles 
+
+.large {
+    font-size: 24px;
+    line-height: 1.2;
+    margin-bottom: 15px;
+}
+
+.lead {
+    font-size: 14px;
+    margin-bottom: 1rem;
+}
+
+.text-primary {
+    color: $primary-color;
+}
+
+// buttons 
+.btn {
+    display: inline-block;
+    background: $light-color;
+    color: #333;
+    padding: 8px 20px;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+    margin-right: 8px;
+    outline: none;
+    transition: all 0.2s ease-in;
+    border-radius: 5px;
+
+    &.btn-primary {
+        @include set-background($primary-color);
+        &:hover {
+            background: lighten($primary-color, 5%);
+        }
+    }
+
+
+    &.btn-success {
+        @include set-background($success-color);
+        &:hover {
+            background: lighten($success-color, 5%);
+        }
+    }
+
+    &:hover {
+        background: lighten($dark-color, 20%);
+        color: #fff;
+    }
+}
+
+// badges
+
+.badge {
+    font-size: 14px;
+    padding: 5px;
+    text-align: center;
+    border: none;
+    border-radius: 2px;
+    margin: 5px;
+    background: $light-color;
+    color: #333;
+
+    &.badge-primary{
+        @include set-background($primary-color);
+    }
+
+    &.badge-success{
+        @include set-background($success-color);
+    }
+    &.badge-danger{
+        @include set-background($danger-color);
+    }
+
+}
+
+// table styling 
+
+.table {
+
+    th {
+        padding: 10px;
+        text-align: left;
+        background: $dark-color;
+        color: $light-color;
+    }
+
+    td{
+        padding: 5px;
+        max-width: 40vw;
+        overflow: auto;
+        
+    }
+
+    tr:nth-child(even) {
+        background-color: #ccc;
+        color: #000; }
+    tr:nth-child(odd){
+        background-color: $light-color;
+        color: #000;
+    }
+
+}

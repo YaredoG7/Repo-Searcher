@@ -1,0 +1,130 @@
+@import "../../../global_scss/config.scss";
+$default-space: 20px;
+
+.page-container {
+  display: grid;
+  grid-template-areas: "input result";
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 50px;
+
+  .input-section {
+    grid-area: input;
+
+    .search-item {
+      display: flex;
+      justify-content: space-between;
+      input {
+        width: 70%;
+        padding: 8px;
+        border: 1px dimgray solid;
+        font-size: 24px;
+        border-radius: 5px;
+
+        &:focus {
+          @include set-background(rgb(161, 197, 132));
+          border: 1px solid #d8ae47;
+        }
+      }
+    }
+
+    .display-filter {
+      max-height: 50vh;
+      width: inherit;
+      overflow: auto;
+
+      .loading {
+        .lds-ring {
+          width: 64px;
+          height: 64px;
+
+          & div {
+            display: block;
+            position: absolute;
+            left: 20%;
+            width: 51px;
+            height: 51px;
+            margin: 6px;
+            border: 6px solid #fff;
+            border-radius: 50%;
+            animation: lds-ring 1.8s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+            border-color: $primary-color transparent transparent transparent;
+
+            &:nth-child(1) {
+              animation-delay: -0.45s;
+            }
+
+            &:nth-child(2) {
+              animation-delay: -0.3s;
+            }
+
+            &:nth-child(3) {
+              animation-delay: -0.15s;
+            }
+          }
+        }
+
+        @keyframes lds-ring {
+          0% {
+            transform: rotate(0deg);
+          }
+          100% {
+            transform: rotate(360deg);
+          }
+        }
+      }
+
+      p {
+        color: #ccc;
+        font-style: italic;
+      }
+
+      li {
+        color: #000;
+        width: 100%;
+        padding: 5px;
+        cursor: pointer;
+
+        &:hover {
+          @include set-background($primary-color);
+        }
+      }
+    }
+  }
+
+  .display-section {
+    grid-area: result;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+    /* margin: 10px 10px; */
+    overflow: hidden;
+    height: auto;
+
+    .checkBox {
+      display: inline;
+      border: none;
+
+      small {
+        color: $success-color;
+        font-size: 13px;
+      }
+    }
+  }
+
+  .input-section,
+  .display-section {
+    & > div {
+      margin-bottom: $default-space;
+      padding-bottom: $default-space;
+      border-bottom: #ccc 1px dashed;
+    }
+
+    &:last-child {
+      border: none;
+    }
+
+    p {
+      margin: ($default-space / 2) 0;
+    }
+  }
+}

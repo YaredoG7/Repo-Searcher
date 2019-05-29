@@ -1,0 +1,87 @@
+<!-- <div id="search">
+    <div class="input-filed">
+      <input
+        type="text"
+        list="repos"
+        placeholder="Search City..."
+        (keyup)="searchRepo($event.target.value)"
+        [(ngModel)]='repoName'
+        (change)="someChange(repoName)"
+      />
+        <datalist id="repos">
+        <select>
+          <option *ngFor="let repo of repos" [value]="repo.full_name"></option>
+        </select>
+        </datalist>
+    </div>
+  </div> 
+
+  <input type="text" [(ngModel)]='repoName' (keyup)="searchRepo($event.target.value)">
+  <ul>
+    <li *ngFor="let repo of repos" [class.bg-success]="getSelected(repo)" (click)=getSelectedRepo(repo)
+                                                                     (mouseover)="isSelected=repo.full_name" >
+      {{repo.full_name}}
+    </li>
+
+
+  </ul>
+<button (click) = "diagramPlot()">Plot</button>
+<button (click) = "loadMore()"> Load more</button>
+<button (click) = "searchRepo(repoName)"> Get Data </button>
+-->
+
+<div class="page-container m-20">
+  <div class="input-section">
+    <div class="search-item">
+      <input type="text" placeholder="Search Repo..." #repoNameInput />
+      <button class="btn btn-success" (click)="searchRepo()">Search</button>
+    </div>
+
+    <div class="display-filter">
+      <div class="loading" *ngIf="isSearching">
+        <div class="lds-ring">
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+      </div>
+
+      <ul class="lead p-10"></ul>
+      <li *ngIf="repos.length == 0">
+        <p class="lead">Nothing to display</p>
+      </li>
+      <li *ngFor="let repo of repos" (click)="getSelectedRepo(repo)">
+        {{ repo.fullName }}
+      </li>
+    </div>
+
+    <button class="badge badge-primary" (click)="loadMore()">Load-more</button>
+  </div>
+  <div class="display-section  p-10">
+    <div class="repo-details">
+      <h2 class="text-primary my-1 p-1">
+        <i class="fa fa-github"> Github repo detail </i>
+      </h2>
+    </div>
+    <div class="reponame">Name: {{ selectedRepo?.fullName || "" }}</div>
+    <div class="url">Url: {{ selectedRepo?.url || "" }}</div>
+    <div class="desc">
+      Description:
+      <p>{{ selectedRepo?.description || "" }}</p>
+    </div>
+    <div class="issues">Issues: {{ selectedRepo?.issuesUrl || "" }}</div>
+    <div class="created">
+      Created: {{ formatDate(selectedRepo?.createdAt) || "" }}
+    </div>
+    <div class="checkBox">
+      <input
+        type="checkbox"
+        #isChecked
+        (change)="sendRepoData(isChecked.checked)"
+      />
+      &nbsp;
+      <small> Mark selected repo to explore it's diagram and open issues</small>
+    </div>
+  </div>
+</div>

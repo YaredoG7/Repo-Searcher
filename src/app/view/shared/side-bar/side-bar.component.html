@@ -1,0 +1,35 @@
+
+<div class="navigators">
+<ul class="large">
+    <li> <a
+        [routerLinkActiveOptions]="{exact: true}"
+        routerLink="/dashboard" 
+        routerLinkActive="active" 
+         >
+        <i class="fa fa-home"> Home </i>
+     </a></li>
+    <li> <a 
+       
+        [routerLinkActiveOptions]="{exact: true}"
+         routerLink="search"  routerLinkActive="active">
+    <i class="fa fa-search">
+        Search
+    </i></a></li>
+    <li> <a 
+        routerLinkActive="active" 
+        [routerLinkActiveOptions]="{exact: true}"
+         routerLink="diagram"  >
+    <i class="fa  fa-bar-chart">
+            Diagram
+        </i>    
+    </a></li>
+    <li> <a  
+        routerLinkActive="active" 
+        [routerLinkActiveOptions]="{exact: true}"
+        routerLink="issues"  >
+            <i class="fa  fa-bug">
+                    Issues
+                </i>    
+    </a></li>
+    </ul>
+</div>

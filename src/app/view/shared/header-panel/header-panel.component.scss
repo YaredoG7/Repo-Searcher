@@ -1,0 +1,22 @@
+@import '../../../../global_scss/config.scss';
+
+.navbar {
+    display: flex;
+    align-items: center; 
+    justify-content: space-between;  
+    height: 100%;
+    width: inherit;
+    @include set-background(#4f5053);
+    ul {
+        display: flex;
+    }
+    a {
+        color: rgb(222, 253, 244);
+        padding: 0.45rem;
+        margin: 0 0.25rem;
+
+        &:hover {
+            color: $primary-color;
+        }
+    }
+}
