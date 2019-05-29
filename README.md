@@ -1,27 +1,31 @@
-# AngularD3Example
+# Angular Git-Hub repo name searcher
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.9.
 
-## Development server
+Angualr CLI has been generated with the latest version of Node (v10.15.3)
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+## Usage
 
-## Code scaffolding
+> Clone this repository to your machine 
+> CD in to it and run npm install
+> ng serve --open
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## What is included
 
-## Build
+I have used [GitHub API](https://api.github.com/) to search for repositories by name and display the relevant iformation with in the search page. 
+> The search can be done dynamically on every keystroke, but due to [Rate Limiting](https://developer.github.com/v3/#rate-limiting) I have used a delay to before calling endpoints
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+> If a repo is selected **checkbox** then you are able to view the other pages of the application
 
-## Running unit tests
+> The Diagram page plots a D3 diagram for displaying Forks, Score, Star-gazers and some other fileds
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+> The issues page displays a table of available issues for the selected repo and a link to vist the git-hub page
 
-## Running end-to-end tests
+## Test
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+I have created unit tests via [Karma](https://karma-runner.github.io) for two relevant components, **The API service** and the **search component** my intention here is to show how unit-tesing in angular goes. 
 
-## Further help
+### Other info
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+For interfacing the api with the app I have used [Adapter pattern](https://en.wikipedia.org/wiki/Adapter_pattern) of **GoF** with static method inside the model class.
+
