@@ -1,12 +1,13 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
-import { flatMap, map, catchError, filter, take, delay } from 'rxjs/operators';
+import { flatMap, map, catchError, filter, take } from 'rxjs/operators';
 import { Observable, throwError, BehaviorSubject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ApiSettingService {
+
   private urlSubject: BehaviorSubject<string> = new BehaviorSubject('');
 
   constructor(private http: HttpClient) {}

@@ -9,19 +9,22 @@ import { D3Service } from '../services/d3.service';
 import { SearchPageComponent } from './search-page/search-page.component';
 import { ApiSettingService } from '../services/api.setting.service';
 import { ZoomableDirective } from '../directives/zoomable.directive';
-import { FilterPipe } from '../pipes/filter.pipe';
 import { HeaderPanelComponent } from './shared/header-panel/header-panel.component';
 import { SideBarComponent } from './shared/side-bar/side-bar.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { IssuesPageComponent } from './issues-page/issues-page.component';
+import { LandingPageComponent } from './landing-page/landing-page.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 
 @NgModule({
-    imports: [CommonModule, RouterModule , BrowserModule, FormsModule ],
+    imports: [CommonModule, RouterModule , BrowserModule, FormsModule, BrowserAnimationsModule],
     providers: [D3Service, ApiSettingService],
     declarations: [RepoDiagramComponent, GitRepoSearchComponent,
-                   SearchPageComponent, ZoomableDirective, FilterPipe,
+                   SearchPageComponent, ZoomableDirective,
                    HeaderPanelComponent, SideBarComponent, NotFoundComponent,
-                   IssuesPageComponent],
+                   IssuesPageComponent,
+                   LandingPageComponent],
     exports: [GitRepoSearchComponent],
   })
   export class GitRepoSearchModule { }

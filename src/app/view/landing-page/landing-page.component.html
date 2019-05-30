@@ -1,0 +1,45 @@
+<div class="profile-grid m-20">
+  <!-- About -->
+  <div class="profile-about large p-2">
+    <h2 class="text-primary">I'm Yared</h2>
+    <p class="large">
+      I create stuff, usually functional other times shiny
+    </p>
+    <div class="line"></div>
+  </div>
+  <!-- Interests -->
+  <div class="profile-exp bg-white p-2">
+    <h2 class="text-primary">Interests</h2>
+    <div>
+      <p>Beer</p>
+      <p>Tech</p>
+      <p>Engineering</p>
+      <p>Fitness</p>
+    </div>
+
+    <!-- Another Interests -->
+    <div>
+      <h3 class="text-primary">There's more</h3>
+      <p>umm...</p>
+      <p>Landing page wasn't part of the plan</p>
+      <p>I should probaly do <strong>Lorem*10</strong> in here ..</p>
+      <h3 class="large">💡</h3>
+      <p>I got it!</p>
+      <p>Check out the right section</p>
+    </div>
+  </div>
+  <!-- Project -->
+  <div class="profile-edu bg-white p-2">
+    <h2 class="text-primary">Machine learning in action</h2>
+
+    <p>
+      On my most recent project I developed a predictive medical analysis web
+      application below is the design doc
+    </p>
+    <div class="schematics">
+      <img src="{{ imageSrc }}" [@fadeInOut]="idx" />
+    </div>
+    
+  </div>
+  <button class="btn btn-primary" (click)="changePath()">NEXT</button>
+</div>

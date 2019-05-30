@@ -2,31 +2,33 @@
   <div class="heading large p-15">
     List of Issues for the selected repo-name
   </div>
-  <section *ngIf='showError' class="badge badge-danger">
-        {{errorMsg}}
- </section>
+  <section *ngIf="showError" class="badge badge-danger">
+    {{ errorMsg }}
+  </section>
   <div class="issue-detials">
-
-      <table class="table">
-          <thead>
-              <tr>
-                  <th>Title</th>
-                  <th class="hide-sm">Body</th>
-                  <th class="hide-sm">State</th>
-                  <th class="hide-sm">Visit-page</th>
-                 
-              </tr>
-          </thead>
-          <tbody>
-              <tr *ngFor="let issue of issues">
-                  <td>{{issue?.title || ''}}/td>
-                  <td> <small> {{issue?.body || ''}}</small></td>
-                  <td >{{issue?.state || ''}}</td>
-                  <td ><button class="btn btn-primary" (click) = "goToIssuePage(issue.url)">
-                      Visit
-                  </button></td>
-                </tr>
-          </tbody>
-      </table>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Title</th>
+          <th class="hide-sm">Body</th>
+          <th class="hide-sm">State</th>
+          <th class="hide-sm">Visit-page</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let issue of issues">
+          <td>{{ issue?.title || "" }}/td></td>
+          <td>
+            <small> {{ issue?.body || "" }}</small>
+          </td>
+          <td>{{ issue?.state || "" }}</td>
+          <td>
+            <button class="btn btn-primary" (click)="goToIssuePage(issue.url)">
+              Visit
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
   </div>
 </div>

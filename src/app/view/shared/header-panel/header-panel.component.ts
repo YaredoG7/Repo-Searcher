@@ -12,4 +12,7 @@ export class HeaderPanelComponent implements OnInit {
   ngOnInit() {
   }
 
+  goToYaredsLinkedIn(url: string) {
+    window.open(url, '_blank');
+ }
 }

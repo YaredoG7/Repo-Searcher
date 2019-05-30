@@ -30,7 +30,6 @@ export class SearchPageComponent implements OnInit {
   }
 
   searchRepo() {
-
     // onkey stroke get data from API but do not exceed rate limit!
 
     fromEvent(this.repoNameInput.nativeElement, 'keyup').pipe(
@@ -54,7 +53,7 @@ export class SearchPageComponent implements OnInit {
        this.repos = data.items.map(item => SearchDataModel.adapt(item));
        }, (err) => {
        this.isSearching = false;
-       console.log(err)
+       console.log(err);
      });
     })
   }

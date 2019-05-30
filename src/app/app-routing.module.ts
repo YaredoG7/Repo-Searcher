@@ -5,14 +5,19 @@ import { SearchPageComponent } from './view/search-page/search-page.component';
 import { RepoDiagramComponent } from './view/repo-diagram/repo-diagram.component';
 import { IssuesPageComponent } from './view/issues-page/issues-page.component';
 import { NotFoundComponent } from './view/not-found/not-found.component';
+import { LandingPageComponent} from './view/landing-page/landing-page.component';
 
 const routes: Routes = [
 
   { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
   {
-    path: 'dashboard',
+    path: '',
     component: GitRepoSearchComponent,
     children: [
+      {
+        path: 'dashboard',
+        component: LandingPageComponent
+      },
       {
         path: 'search',
         component: SearchPageComponent

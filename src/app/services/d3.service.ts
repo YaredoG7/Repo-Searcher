@@ -28,11 +28,11 @@ export class D3Service {
 
   }
 
-  set sD3Data(data: D3DataModel){
+  set sD3Data(data: D3DataModel) {
     this.data = data;
   }
 
-  get gD3Data():D3DataModel{
+  get gD3Data(): D3DataModel {
     return this.data;
   }
 

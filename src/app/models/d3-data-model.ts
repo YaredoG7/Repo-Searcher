@@ -1,6 +1,6 @@
 
 export interface D3DataModel{
-  data: Array<Data>   
+  data: Array<Data>
 }
 
 export interface Data{

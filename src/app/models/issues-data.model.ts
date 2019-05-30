@@ -5,7 +5,7 @@ export class IssuesModel {
      public body: string,
      public state: string,
      public url: string,
-    ){}
+    ) {}
 
     static adapt(item: any): IssuesModel{
         return new IssuesModel(

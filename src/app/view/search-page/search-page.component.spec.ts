@@ -4,7 +4,7 @@ import { SearchPageComponent } from './search-page.component';
 import { D3Service } from '../../services/d3.service';
 
 
-fdescribe('SearchPageComponent', () => {
+describe('SearchPageComponent', () => {
   let component: SearchPageComponent;
   let fixture: ComponentFixture<SearchPageComponent>;
 
@@ -38,8 +38,10 @@ fdescribe('SearchPageComponent', () => {
     expect(component.formatDate(new Date('2019-05-29'))).toMatch(date);
   });
 
+  // does the check through the setters and getters
   it('should check data has been sent to be plotted', inject([D3Service], (service: D3Service) => {
     const fakeD3Data = { data: [{name: 'dummy-1', color: '#f231f1', value: 250}]};
+    service.sD3Data = fakeD3Data;
     const d3Data = service.gD3Data;
     component.selectedRepo = {fullName: '', url: '', description: '', issuesUrl: '', createdAt: null, d3: fakeD3Data };
 
